@@ -60,22 +60,21 @@ class DelayModel:
             fecha_i = datetime.strptime(data['Fecha-I'], '%Y-%m-%d %H:%M:%S')
             return ((fecha_o - fecha_i).total_seconds()) / 60
 
-        # Process the data
-
+  
         data['min_diff'] = data.apply(get_min_diff, axis=1)
         data['delay'] = np.where(data['min_diff'] > 15, 1, 0)
         
-        # Create features and ensure only selected columns are used
+ 
         features = pd.concat([
             pd.get_dummies(data['OPERA'], prefix='OPERA'),
             pd.get_dummies(data['TIPOVUELO'], prefix='TIPOVUELO'),
             pd.get_dummies(data['MES'], prefix='MES')
         ], axis=1)
 
-        # Filter features to only those in FEATURES_COLS
+
         features = features.reindex(columns=self.FEATURES_COLS, fill_value=0)
         
-        target = data[['delay']]  # Ensure target is a DataFrame
+        target = data[['delay']]  
 
         if target_column:
             return features, target
