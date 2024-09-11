@@ -53,3 +53,5 @@ Estructura del Response:
 Devuelve una lista con las predicciones de retraso, donde 1 indica que el vuelo se retrasará más de 15 minutos, y 0 indica que no lo hará.
 3. Manejo de errores
 Si el mes (MES) está fuera del rango permitido (1 a 12), se genera una excepción y la API devuelve un error con un código 400.
+4. Endpoint de verificación /health
+Además, se implementó un endpoint simple /health que devuelve el estado de salud del API, confirmando que el servicio está activo.
