@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import fastapi
-
-app = fastapi.FastAPI()
-
-@app.get("/health", status_code=200)
-async def get_health() -> dict:
-    return {
-        "status": "OK"
-    }
-
-@app.post("/predict", status_code=200)
-async def post_predict() -> dict:
-    return
-=======
 from fastapi import FastAPI, HTTPException
 import pandas as pd
 from pydantic import BaseModel
@@ -70,4 +55,3 @@ async def post_predict(request: PredictRequest) -> dict:
         return {"predict": predictions}
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
->>>>>>> develop

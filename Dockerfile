@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# syntax=docker/dockerfile:1.2
-FROM python:latest
-# put you docker configuration here
-=======
 FROM python:3.9-slim
 
 # Set the working directory in the container
@@ -24,4 +19,3 @@ EXPOSE 8080
 
 # Command to run the FastAPI application with Uvicorn
 CMD ["uvicorn", "challenge.api:app", "--host", "0.0.0.0", "--port", "8080"]
->>>>>>> develop

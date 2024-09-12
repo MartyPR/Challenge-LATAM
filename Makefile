@@ -23,11 +23,7 @@ install:		## Install dependencies
 	pip install -r requirements-test.txt
 	pip install -r requirements.txt
 
-<<<<<<< HEAD
-STRESS_URL = http://127.0.0.1:8000 
-=======
 STRESS_URL = https://flightdelayapi-image2-957914628937.us-central1.run.app
->>>>>>> develop
 .PHONY: stress-test
 stress-test:
 	# change stress url to your deployed app 
