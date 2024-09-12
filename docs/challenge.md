@@ -1,7 +1,7 @@
 
 ## Parte I: Ajustes y Mejoras en el Modelo
 
-1. Definición del Modelo DelayModel
+1. *Definición del Modelo DelayModel*
 El modelo DelayModel fue diseñado para predecir los retrasos de vuelos a partir de un conjunto específico de características (features). Para ello, se utilizan los siguientes pasos:
 
 Preprocesamiento de datos: Se aplicaron varias técnicas de transformación, entre ellas:
@@ -24,7 +24,7 @@ Relaciones lineales: El modelo asume una relación lineal entre las variables in
 
 *Nota*:  Logistic Regression es un buen punto de partida para este caso debido a que es simple, interpretable y eficiente.  especialmente en un entorno donde se priorizan las iteraciones rápidas
 
-2. Características seleccionadas para el modelo
+2. *Características seleccionadas para el modelo*
 El modelo fue entrenado utilizando las siguientes columnas (features):
 
 `OPERA_Latin American Wings`,
@@ -39,10 +39,10 @@ El modelo fue entrenado utilizando las siguientes columnas (features):
 `MES_11`.
 Estas características se seleccionaron tras analizar el impacto de cada una en la probabilidad de retraso.
 
-3. Guardado y carga del modelo
+3. *Guardado y carga del modelo*
 El modelo se guarda utilizando pickle en un archivo delay_model.pkl, que es reutilizado posteriormente en el API para realizar predicciones.
 
-4. Predicciones
+4. *Predicciones*
 Las predicciones se realizan utilizando la función predict, que carga el modelo si no está ya en memoria y realiza predicciones basadas en las características preprocesadas de nuevos datos de vuelos.
 
 ## Parte II: API para la predicción de retrasos en vuelos
